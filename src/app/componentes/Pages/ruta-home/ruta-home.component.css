@@ -1,0 +1,40 @@
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+
+
+.footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #e1e3fa;
+}
+footer ul.footerleft{
+    margin-left: 150px;
+    margin-top: 10px;
+}
+footer ul.footerleft li{
+    display: inline;
+    margin-right: 25px;
+}
+footer a{
+    color: #222;
+}
+
+footer a:hover{
+    color: #ffffff;
+    text-decoration: none;    
+}
+
+.mapa{
+  margin-left: 5rem;  
+}
+.inc{
+  background-color: cadetblue;
+}
+
+

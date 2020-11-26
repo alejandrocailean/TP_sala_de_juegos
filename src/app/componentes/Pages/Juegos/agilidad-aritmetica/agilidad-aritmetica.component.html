@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="menuJuego " >
+        <form class="form-inline" style="align-items: center;">
+            <button (click)="jugar()" style="align-items: center;" [hidden]="!h_input" class="btn btn-secondary" > A JUGAR!!!!</button>
+
+            <input type="text" [hidden]="h_input" name="numero1" class="form-control" [value]="jugador.numero1" style="width: 10%;"><label for="numero1" [hidden]="h_input" style="font-size:x-large;">X</label>
+            <input type="text" [hidden]="h_input" name="numero2" class="form-control" [value]="jugador.numero2" style="width: 10%;"><label for="numero2" [hidden]="h_input" style="font-size:x-large;">+</label>
+            <input type="text" [hidden]="h_input" name="numero3" class="form-control" [value]="jugador.numero3" style="width: 10%;"><label for="numero3" [hidden]="h_input" style="font-size:x-large;">/</label>
+            <input type="text" [hidden]="h_input" name="numero4" class="form-control " [value]="jugador.numero4" style="width: 10%;"><label for="numero4" [hidden]="h_input" style="font-size:x-large;">=</label>
+            <input type="number" [hidden]="h_input" name="resultado"style="width: 10%;" class="form-control" [(ngModel)]="resultado" >
+            <br><br>
+            <button class="btn btn-info" [hidden]="h_input" (click)="calcular()">CALCULAR</button>
+            <button (click)="jugar()" [hidden]="h_input" class="btn btn-danger">OTRO CALCULO</button>
+        </form>
+    </div>
+    <div id="snackbar">{{Mensajes}}</div>
+
+
+</div>

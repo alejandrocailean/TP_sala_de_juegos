@@ -1,0 +1,19 @@
+
+<div class="container-fluid" id="menuJuegos">    
+    <form >
+        <h2>Encuentra el anagrama de la siguiente palabra:</h2>
+        <h3 >{{palabra_sec}}</h3>
+        <input type="button" class="btn btn-primary" [hidden]="h_btn_gen_pal" value="Ramdom palabra" (click)="palabraAleatoria()">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control " aria-describedby="button-addon2" [hidden]="h_btn_adivina" name="palabra_ing" [(ngModel)]="palabra_ing" placeholder="Escribe aqui el posible anagrama" >
+            <div class="input-group-append">
+                <button class="btn btn-outline-info form-control" [hidden]="h_btn_adivina" id="button-addon2" (click)="adivinaAnagrama()" >Adivina anagrama</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="snackbar">{{Mensajes}}</div>
+<br><br><br>
+<!-- <button type="button" class="btn btn-primary" routerLink="">Back</button>  -->
+
+

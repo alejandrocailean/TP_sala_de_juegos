@@ -1,0 +1,38 @@
+#menuJuegos{
+    /* position: relative;  */
+    top: 50%; 
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    text-align: center;
+    background-color: burlywood;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+   
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 50px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    right: 20%;
+    bottom: 50%;
+    top: 50%;
+    font-size: 20px;
+}
+#snackbar.Ganador {
+    background-color: #059F2F;
+}
+#snackbar.Perdedor {
+    background-color: #FF0000;
+}
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}

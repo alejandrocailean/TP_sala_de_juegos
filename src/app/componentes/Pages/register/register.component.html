@@ -1,0 +1,15 @@
+<H3>REGISTRO</H3>
+<div class="form-group">
+    <form [formGroup]="registerForm" (ngSubmit)='register()'>
+        
+        <label class="form" >MAIL</label><br>
+        <input type="email" formControlName='email' class="form-control" email required ><br><br>
+    
+        <label class="form" >CONTRASEÑA</label><br>
+        <input type="password" formControlName="password" class="form-control" required><br><br>
+    
+        <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">REGISTRAR</button>
+    
+    </form>
+</div>
+          

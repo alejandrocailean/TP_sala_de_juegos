@@ -1,0 +1,26 @@
+.radio_item{
+    display: none !important;
+    }
+
+    .label_item {
+    opacity: 0.1;
+    }
+    
+    .radio_item:checked + label {
+    opacity: 1;
+    }
+
+label {
+cursor: pointer;   
+}
+
+.tamanioImagen{
+  width: 150px;
+  height: 150px;
+}
+
+#snackbar{
+  position: fixed;
+  bottom: 0%;
+  font-display: auto  ;
+}

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="container" id="menuJuegos">
+        <STRong> <h3 style="text-align: center;">ELIGE TU GUERRERO</h3></STRong>
+        
+        <form style="text-align: center;" >  
+            
+            <input type="radio" class="radio_item" name="item" id="radio1" [disabled]="disabledRadio"  (click)="guerrero('papel')">
+            <label class="label_item" for="radio1"> <img class="tamanioImagen" [src]="jugador.papel"> </label>
+
+            <input type="radio" class="radio_item" name="item" id="radio2" [disabled]="disabledRadio" (click)="guerrero('tijera')">
+            <label class="label_item" for="radio2"> <img class="tamanioImagen" [src]="jugador.tijera"> </label>
+
+            <input type="radio" class="radio_item" name="item" id="radio3" [disabled]="disabledRadio" (click)="guerrero('piedra')" >
+            <label class="label_item" for="radio3"> <img class="tamanioImagen" [src]="jugador.piedra"> </label>
+            
+        </form>
+        <br><br>
+        <div style="text-align: center;">
+            <img [src]="rutaGuerrero" [hidden]="!disabledRadio" class="tamanioImagen">
+            <img [src]="rutaComputadora" [hidden]="!disabledRadio" class="tamanioImagen" style="   transform: scaleX(-1);"><br><br>
+            <button class="btn btn-outline-secondary" (click)="jugar()" [disabled]="!disabledRadio" style=" bottom: auto;" >A LUCHAR!!!!</button>
+        </div>
+        
+        <div id="snackbar">{{Mensajes}}</div>
+    </div>
+    
+    
+    <!-- <button type="button" class="btn btn-primary" routerLink="">Back</button>  -->
+</div>

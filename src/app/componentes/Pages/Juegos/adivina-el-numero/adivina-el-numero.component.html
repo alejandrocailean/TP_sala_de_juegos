@@ -1,0 +1,15 @@
+<div class="container-fluid">
+   
+    <div class="container" id="menuJuegos">
+        <button class="btn btn-primary" [hidden]='h_btn_gen_num' (click)='generarNumero(100,1)'>generar numero</button><br>
+        <div class="input-group mb-3">
+            <input [hidden]='h_btn_adivina' type="number" class="form-control" aria-describedby="button-addon2" style="width:50%" [(ngModel)]="adivina.numero_insertado" name="numero_insertado" placeholder="Ingresa un numero" id="numero" >
+            <div class="input-group-append">
+                <button class="btn btn-outline-info form-control" id="button-addon2" [hidden]='h_btn_adivina' (click)='adivinaNumero()'>Adivina el Numero!!!</button>
+            </div>
+        </div>
+
+    </div>
+        <div id="snackbar">{{Mensajes}}</div>
+        <!-- <button type="button" class="btn btn-primary" routerLink="">Back</button>  -->
+</div>

@@ -1,0 +1,19 @@
+<div class="form-group">
+    <form >
+        <label class="label" >usuario</label><br>
+        <input type="email" name="usuario" class="form-control" required [(ngModel)]="usuario"><br><br>
+    
+        <label class="label" >contraseña</label><br>
+        <input type="password" name="contraseña" class="form-control" required [(ngModel)]="password"><br><br>
+    
+        <button class="btn btn-info" (click)="login($event)">ENVIAR</button> <br>
+       <!--  <button class="btn btn-danger" (click)='view()'>ver logueado</button> -->
+    </form>
+    
+</div>
+<br><br>
+<h5>Si no esta registrado haga click en el siguiente enlace:</h5>
+<a routerLink='../register'>REGISTRARSE</a>
+
+
+
