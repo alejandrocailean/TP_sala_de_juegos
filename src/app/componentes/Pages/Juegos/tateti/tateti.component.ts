@@ -200,9 +200,8 @@ export class TaTeTiComponent implements OnInit {
             this.Mensajes=this.mensajes.MostrarMensaje('Empatastes!!!',false);
           }
             
-          
-          
-        //  this.router.navigateByUrl('');
+          alert(this.resultado);
+          this.resetGame();
           
         }
         else
@@ -247,8 +246,8 @@ export class TaTeTiComponent implements OnInit {
             if (this.resultado==='Empate') {
               this.Mensajes=this.mensajes.MostrarMensaje('Empatastes!!!',false);
             }
-             
-           //   this.router.navigateByUrl('');
+            alert(this.resultado); 
+            this.resetGame();
               
              
           }  
@@ -291,5 +290,11 @@ export class TaTeTiComponent implements OnInit {
     this.afs.collection('users_score').doc(this.email).set({email:this.email,puntaje:this.fofo.puntaje});
     
 
+  }
+
+  resetGame(){
+    setTimeout(() =>{
+      window.location.reload();
+    }, 2000);
   }
 }
