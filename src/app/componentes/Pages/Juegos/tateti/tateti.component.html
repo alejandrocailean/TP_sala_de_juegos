@@ -1,5 +1,70 @@
-<div class="container-fluid">
-    <p>tateti works!</p><br>
+
+<html >
+    <head >
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+    </head>
+    <body >
+    
+        <h1 >Juego Ta-Te-Ti</h1>
+        
+    <div class = "juego" class="container " id="container" >
+        
+      <div class="juego" style="text-align: center;">
+         
+        <div class = "juego" style="padding: 10px;margin-top: 5%">
+          <div class = "juego" [hidden]="botonesEleccion">
+            <h1>Seleccione O - X :</h1>
+            <br>
+            <br>
+            <button mat-raised-button (click)="eleccionSigno('X')"><img src="assets/images/X.gif" border="0" name="rc9"></button>
+            <button mat-raised-button (click)="eleccionSigno('O')"><img src="assets/images/O.gif" border="0" name="rc9"></button>
+          </div>
+          <div class = "juego"[hidden]="botonesJuego">
+            <h1 >Comienza el juego</h1>
+                
+                <div class="ui-g-12">
+                    <button mat-raised-button id="botonUno" (click)="modificar(0)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc0" border="0" name="rc0"></button>
+                    <button mat-raised-button id="botonDos" (click)="modificar(1)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc1" border="0" name="rc1"></button>
+                    <button mat-raised-button id="botonTres" (click)="modificar(2)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc2" border="0" name="rc2"></button>
+                   
+                </div>
+                <div class="ui-g-12">
+                    <button mat-raised-button id="botonCuatro"(click)="modificar(3)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc3" border="0" name="rc3"></button>
+                    <button mat-raised-button id="botonCinco" (click)="modificar(4)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc4" border="0" name="rc4"></button>
+                    <button mat-raised-button id="botonSeis" (click)="modificar(5)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc5" border="0" name="rc5"></button>
+                   
+                </div>
+                <div class="ui-g-12">
+    
+                    <button mat-raised-button id="botonSiete"(click)="modificar(6)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc6" border="0" name="rc6"></button>
+                    <button mat-raised-button id="botonOcho" (click)="modificar(7)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc7" border="0" name="rc7"></button>
+                    <button mat-raised-button id="botonNueve" (click)="modificar(8)" [disabled]="band==true"><img src="assets/images/nothing.gif" id="rc8" border="0" name="rc8"></button>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+          </div>
+          
+          
+        </div>
+        
+    </div>
+    
+    </div>
+    <div id="snackbar">{{Mensajes}}</div>
     <button type="button" class="btn btn-primary" routerLink="">Back</button> 
-</div>
+    </body>
+    </html>
+
+
+
+
+
+    
+
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { FirestoreService } from 'src/app/Servicios/firestore/firestore.service';
 import { MostrarMensajeService } from 'src/app/Servicios/MostrarMensaje/MostrarMensaje.service';
 import {Anagrama}from '../../../../class/anagrama';
 
@@ -16,14 +18,23 @@ export class AnagramaComponent implements OnInit {
   h_btn_adivina:boolean;
   palabra_sec:string;
   palabra_ing:string;
+  fofo;
+  email=localStorage.getItem('email');
 
-  constructor(private mensajes:MostrarMensajeService) {
+  constructor(private mensajes:MostrarMensajeService,private firestore:FirestoreService,private afs:AngularFirestore) {
     this.anagrama=new Anagrama;
     this.h_btn_gen_pal=false;
     this.h_btn_adivina=true;
    }
 
   ngOnInit(): void {
+    this.firestore.getDato('users_score',this.email).subscribe(data=>{
+
+
+      this.fofo=data.payload.data();
+      console.log(this.fofo.puntaje)
+    }
+      );
   }
 
   palabraAleatoria(){       
@@ -60,6 +71,8 @@ export class AnagramaComponent implements OnInit {
         this.h_btn_adivina=true;
         this.palabra_sec="";
         this.palabra_ing="";
+        this.fofo.puntaje+=50;
+      this.afs.collection('users_score').doc(this.email).set({email:this.email,puntaje:this.fofo.puntaje})
       }else{
           console.log(this.anagrama.mensaje_perdedor);
           this.Mensajes= this.mensajes.MostrarMensaje(this.anagrama.mensaje_perdedor,false)

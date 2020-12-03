@@ -35,6 +35,11 @@ export class FirestoreService {
     return this.firestore.collection(coleccion).snapshotChanges();
   }
   
+  //Sumar puntaje
+  public sumarPuntaje (email:string){
+    return this.firestore.collection("users_score"),ref =>ref.where('email','=',email);
+    
+  }
 }
 
 

@@ -20,7 +20,7 @@ import { AdivinaElNumeroComponent } from './componentes/Pages/Juegos/adivina-el-
 import { AnagramaComponent } from './componentes/Pages/Juegos/anagrama/anagrama.component';
 import { PiedraPapelTijeraComponent } from './componentes/Pages/Juegos/piedra-papel-tijera/piedra-papel-tijera.component';
 import { AgilidadAritmeticaComponent } from './componentes/Pages/Juegos/agilidad-aritmetica/agilidad-aritmetica.component';
-import { TatetiComponent } from './componentes/Pages/Juegos/tateti/tateti.component';
+import { TaTeTiComponent } from './componentes/Pages/Juegos/tateti/tateti.component';
 import { ListadoComponent} from '../app/componentes/Organism/listado/listado.component';
 import { CardsComponent } from './componentes/Pages/Juegos/cards/cards.component';
 import { CardsService } from './Servicios/Cards/cards.service';
@@ -32,6 +32,8 @@ import { NombreUsuarioComponent } from './componentes/Atoms/nombre-usuario/nombr
 import { DestacadoComponent } from './componentes/Organism/destacado/destacado.component';
 import { LoginComponent } from './componentes/Pages/login/login.component';
 import { RegisterComponent } from './componentes/Pages/register/register.component';
+import { FirestoreService } from './Servicios/firestore/firestore.service';
+import { MiJuegoComponent } from './componentes/Pages/Juegos/mi-juego/mi-juego.component';
 
 
 @NgModule({
@@ -45,7 +47,7 @@ import { RegisterComponent } from './componentes/Pages/register/register.compone
     AnagramaComponent,
     PiedraPapelTijeraComponent,
     AgilidadAritmeticaComponent,
-    TatetiComponent,
+    TaTeTiComponent,
     ListadoComponent,
     CardsComponent,
     CarrouselComponent,
@@ -54,7 +56,8 @@ import { RegisterComponent } from './componentes/Pages/register/register.compone
     NombreUsuarioComponent,
     DestacadoComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MiJuegoComponent
     
   ],
   imports: [
@@ -72,7 +75,7 @@ import { RegisterComponent } from './componentes/Pages/register/register.compone
      
     
   ],
-  providers: [HttpClient,MostrarMensajeService,CardsService],
+  providers: [HttpClient,MostrarMensajeService,CardsService, FirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

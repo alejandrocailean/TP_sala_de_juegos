@@ -9,15 +9,15 @@ import { Jugador } from '../../../class/jugador';
 })
 export class ListadoComponent implements OnInit {
   
-  // @Input() listado:Jugador;
+   @Input() listado:any[];
   // @Input() titulo:string;
-  listado:Jugador;
-  titulo="tabla de los grosos!!!!!";
+  
+  titulo="TABLA DE PUNTAJES";
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.listado);
-        this.listado=new Jugador("juan",600);
+    
+       
   }
 
 }

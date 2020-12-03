@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { timer } from 'rxjs';
+import { FirestoreService } from 'src/app/Servicios/firestore/firestore.service';
 
 import { MostrarMensajeService } from 'src/app/Servicios/MostrarMensaje/MostrarMensaje.service';
 
@@ -23,11 +25,22 @@ export class CardsComponent implements OnInit {
  public intentos = 14;
  public cont_intentos = 0;
  Mensajes:string;
+ fofo;
+  email=localStorage.getItem('email');
 
- constructor(private mensaje:MostrarMensajeService) {
+ constructor(private mensaje:MostrarMensajeService,private firestore:FirestoreService,private afs:AngularFirestore) {
  }
 
- ngOnInit() { this.NuevoJuego() }
+ ngOnInit() { 
+   this.NuevoJuego();
+   this.firestore.getDato('users_score',this.email).subscribe(data=>{
+
+
+    this.fofo=data.payload.data();
+    console.log(this.fofo.puntaje)
+  }
+    );
+   }
 
 
  card_selected(idx) {
@@ -60,6 +73,8 @@ export class CardsComponent implements OnInit {
   }
   if (this.aciertos == this.count_aciertos) {
    this.Mensajes=this.mensaje.MostrarMensaje("GANASTES!!! XD",true)
+   this.fofo.puntaje+=50;
+      this.afs.collection('users_score').doc(this.email).set({email:this.email,puntaje:this.fofo.puntaje})
    window.location.reload();
    
   }

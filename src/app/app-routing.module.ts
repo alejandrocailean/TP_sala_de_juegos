@@ -6,8 +6,9 @@ import { AdivinaElNumeroComponent } from './componentes/Pages/Juegos/adivina-el-
 import { AgilidadAritmeticaComponent } from './componentes/Pages/Juegos/agilidad-aritmetica/agilidad-aritmetica.component';
 import { AnagramaComponent } from './componentes/Pages/Juegos/anagrama/anagrama.component';
 import { CardsComponent } from './componentes/Pages/Juegos/cards/cards.component';
+import { MiJuegoComponent } from './componentes/Pages/Juegos/mi-juego/mi-juego.component';
 import { PiedraPapelTijeraComponent } from './componentes/Pages/Juegos/piedra-papel-tijera/piedra-papel-tijera.component';
-import { TatetiComponent } from './componentes/Pages/Juegos/tateti/tateti.component';
+import { TaTeTiComponent } from './componentes/Pages/Juegos/tateti/tateti.component';
 import { LoginComponent } from './componentes/Pages/login/login.component';
 import { RegisterComponent } from './componentes/Pages/register/register.component';
 import { RutaAboutComponent } from './componentes/Pages/ruta-about/ruta-about.component';
@@ -26,8 +27,9 @@ const routes: Routes = [
       {path:'ruta-agilidad-aritmetica', component:AgilidadAritmeticaComponent},
       {path:'ruta-anagrama',component:AnagramaComponent},
       {path:'ruta-piedra-papel-tijera',component:PiedraPapelTijeraComponent},
-      {path:'ruta-tateti',component:TatetiComponent},
-      {path:'ruta-cards',component:CardsComponent}
+      {path:'ruta-tateti',component:TaTeTiComponent},
+      {path:'ruta-cards',component:CardsComponent},
+      {path:'ruta-mijuego',component:MiJuegoComponent}
     ]
   },
   {path:"register",component:RegisterComponent},

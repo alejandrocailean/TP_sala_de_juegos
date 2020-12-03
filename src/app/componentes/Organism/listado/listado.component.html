@@ -4,14 +4,14 @@
   <Table class="table table-striped">
       <thead>
         <tr>
-          <th>Nombre</th>
+          <th>Email</th>
           <th>Score</th>          
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <td>{{listado.nombre}}</td>
-          <td>{{listado.score}}</td>          
+        <tr *ngFor="let jugador of listado">
+          <td>{{jugador.data.email}}</td>
+          <td>{{jugador.data.puntaje}}</td>          
         </tr>
       </tbody>
     </Table> 

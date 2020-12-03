@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { FirestoreService } from 'src/app/Servicios/firestore/firestore.service';
 import { MostrarMensajeService } from 'src/app/Servicios/MostrarMensaje/MostrarMensaje.service';
 import {PiedraPapelTijera} from '../../../../class/piedra-papel-tijera';
 
@@ -15,14 +17,22 @@ export class PiedraPapelTijeraComponent implements OnInit {
   disabledRadio:boolean;
   rutaGuerrero:string;
   rutaComputadora:string;
-  
+  fofo;
+  email=localStorage.getItem('email');
 
-  constructor(private mensaje:MostrarMensajeService) { 
+  constructor(private mensaje:MostrarMensajeService,private firestore:FirestoreService,private afs:AngularFirestore) { 
     this.jugador=new PiedraPapelTijera;
     this.disabledRadio=false;
   }
 
   ngOnInit(): void {
+    this.firestore.getDato('users_score',this.email).subscribe(data=>{
+
+
+      this.fofo=data.payload.data();
+      console.log(this.fofo.puntaje)
+    }
+      );
   }
 
   guerrero(jug:string){
@@ -72,6 +82,8 @@ export class PiedraPapelTijeraComponent implements OnInit {
     if (this.jugador.guerrero==="piedra" && this.jugador.computadora==="tijera") {
       this.Mensajes= this.mensaje.MostrarMensaje(this.jugador.mensaje_ganador,true);
       console.log(this.jugador.mensaje_ganador);
+      this.fofo.puntaje+=50;
+      this.afs.collection('users_score').doc(this.email).set({email:this.email,puntaje:this.fofo.puntaje})
     }
     //fin bloque
 
@@ -79,6 +91,8 @@ export class PiedraPapelTijeraComponent implements OnInit {
     if (this.jugador.guerrero==="papel" && this.jugador.computadora==="piedra") {      
       this.Mensajes=this.mensaje.MostrarMensaje(this.jugador.mensaje_ganador,true);
       console.log(this.jugador.mensaje_ganador);
+      this.fofo.puntaje+=50;
+      this.afs.collection('users_score').doc(this.email).set({email:this.email,puntaje:this.fofo.puntaje})
     }    
     if (this.jugador.guerrero==="papel" && this.jugador.computadora==="tijera") {
       this.Mensajes=this.mensaje.MostrarMensaje(this.jugador.mensaje_perdedor,false);
@@ -90,6 +104,8 @@ export class PiedraPapelTijeraComponent implements OnInit {
     if (this.jugador.guerrero==="tijera" && this.jugador.computadora==="papel") {      
       this.Mensajes=this.mensaje.MostrarMensaje(this.jugador.mensaje_ganador,true);
       console.log(this.jugador.mensaje_ganador);
+      this.fofo.puntaje+=50;
+      this.afs.collection('users_score').doc(this.email).set({email:this.email,puntaje:this.fofo.puntaje})
     }
     if (this.jugador.guerrero==="tijera" && this.jugador.computadora==="piedra") {
         this.Mensajes=this.mensaje.MostrarMensaje(this.jugador.mensaje_perdedor,false);
