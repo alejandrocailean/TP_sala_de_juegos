@@ -11,6 +11,19 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+//import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 import { RutaJuegosComponent } from './componentes/Pages/ruta-juegos/ruta-juegos.component';
 import { RutaAboutComponent } from './componentes/Pages/ruta-about/ruta-about.component';
@@ -71,7 +84,18 @@ import { MiJuegoComponent } from './componentes/Pages/Juegos/mi-juego/mi-juego.c
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatIconModule,
+    MatCardModule,
+    LayoutModule,
+    MatListModule,
+    MatGridListModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
      
     
   ],
